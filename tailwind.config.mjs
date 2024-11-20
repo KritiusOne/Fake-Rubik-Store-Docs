@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				"black": "#080705",
-				"charcoal": "#40434E",
+				"raising-black": "#161925",
 				"cordovan": "#912F40",
 				"redWood": "#B63E52",
 				"babyPowder": "#FFFFFA"
