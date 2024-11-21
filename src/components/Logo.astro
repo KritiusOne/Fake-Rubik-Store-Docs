@@ -1,15 +1,18 @@
 ---
-const { colorSVG } = Astro.props
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<"svg">{
+}
+const classNames = Astro.props.class
 ---
 
 <div class="flex flex-row gap-2 justify-center items-center text-babyPowder">
   <svg
+    class={classNames}
     version='1.0'
     xmlns='http://www.w3.org/2000/svg'
     viewBox='0 0 500.000000 500.000000'
     preserveAspectRatio='xMidYMid meet'
-    width="64"
-    fill={colorSVG}
   >
     <g
       transform='translate(0.000000,500.000000) scale(0.100000,-0.100000)'
@@ -280,5 +283,5 @@ c-31 26 -35 25 -55 -17z'
       ></path>
     </g>
   </svg>
-  <h2 class="text-lg font-bold text-pretty font-sans">Fake Rubik Store</h2>
+  <slot />
 </div>
