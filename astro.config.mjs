@@ -5,7 +5,9 @@ import tailwind from '@astrojs/tailwind';
 
 import starlight from '@astrojs/starlight';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), starlight({title: "Fake Rubik Store Docs"})]
+  integrations: [tailwind(), starlight({title: "Fake Rubik Store Docs"}), mdx()]
 });
