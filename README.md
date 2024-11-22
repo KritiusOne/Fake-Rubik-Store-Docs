@@ -4,7 +4,7 @@
 Este repositorio contiene la documentación de la API RESTful 'Fake Rubik Store'. 'Fake Rubik Store' es un proyecto full stack que incluye un e-commerce de cubos de rubik. Esta API RESTful proporciona los servicios backend para la tienda online.
 <a target="_blank" href="https://github.com/KritiusOne/FakeRubikStoreAPI" style="background-color: #B63E52; border: none; color: white; padding: 4px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 20px; font-weight: bolder; margin: 8px;">Show API</a>
 
-***Español | Spanish***
+***Inglés | English***
 This repository contains the documentation for the RESTful API called 'Fake Rubik Store API'. 'Fake Rubik Store' is a full stack project where I've built an e- commerce focused on Rubik's Cubes. This RESTful API provides the backend services for the online store.
 <a target="_blank" href="https://github.com/KritiusOne/FakeRubikStoreAPI" style="background-color: #B63E52; border: none; color: white; padding: 4px 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 20px; font-weight: bolder; margin: 8px;">Show API</a>
 
