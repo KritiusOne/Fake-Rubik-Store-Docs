@@ -1,8 +1,37 @@
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+/* Dark mode colors. */
 @import "../node_modules/@astrojs/starlight/style/asides.css";
 @import "../node_modules/@astrojs/starlight/style/markdown.css";
 @import "../node_modules/@astrojs/starlight/style/props.css";
 @import "../node_modules/@astrojs/starlight/style/reset.css";
 @import "../node_modules/@astrojs/starlight/style/util.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+	--sl-color-accent-low: #361a1d;
+	--sl-color-accent: #a84452;
+	--sl-color-accent-high: #e4bec0;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #ebedf4;
+	--sl-color-gray-2: #bfc2ca;
+	--sl-color-gray-3: #868b9b;
+	--sl-color-gray-4: #535766;
+	--sl-color-gray-5: #343845;
+	--sl-color-gray-6: #232633;
+	--sl-color-black: #16181e;
+}
+/* Light mode colors. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #eccfd0;
+	--sl-color-accent: #aa4654;
+	--sl-color-accent-high: #4e2328;
+	--sl-color-white: #16181e;
+	--sl-color-gray-1: #232633;
+	--sl-color-gray-2: #343845;
+	--sl-color-gray-3: #535766;
+	--sl-color-gray-4: #868b9b;
+	--sl-color-gray-5: #bfc2ca;
+	--sl-color-gray-6: #ebedf4;
+	--sl-color-gray-7: #f5f6fa;
+	--sl-color-black: #ffffff;
+}
