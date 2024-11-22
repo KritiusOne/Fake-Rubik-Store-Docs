@@ -9,5 +9,13 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), starlight({title: "Fake Rubik Store Docs"}), mdx()]
+  integrations: [tailwind({
+    applyBaseStyles: true
+  }), starlight({
+    title: "Fake Rubik Store Docs",
+    customCss: ['./src/tailwind.css']
+  }),   mdx()],
+  devToolbar: {
+    enabled: true
+  }
 });

@@ -13,8 +13,9 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^3.1.9",
     "@astrojs/starlight": "^0.29.2",
+    "@astrojs/starlight-tailwind": "^2.0.3",
     "@astrojs/tailwind": "^5.1.2",
-    "astro": "^4.16.13",
+    "astro": "^4.16.14",
     "docs": "file:",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"

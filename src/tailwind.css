@@ -1,0 +1,8 @@
+@import "../node_modules/@astrojs/starlight/style/asides.css";
+@import "../node_modules/@astrojs/starlight/style/markdown.css";
+@import "../node_modules/@astrojs/starlight/style/props.css";
+@import "../node_modules/@astrojs/starlight/style/reset.css";
+@import "../node_modules/@astrojs/starlight/style/util.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
