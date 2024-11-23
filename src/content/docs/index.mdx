@@ -1,10 +1,32 @@
 ---
-title: pagina index de prueba
-descripcion: esta es una pagina de prueba
+title: Fake Rubik Store Docs
+descripcion: Documentación de la RestFULL API llamada 'Fake Rubik Store API', la cual es parte del proyecto 'Fake Rubik Store'.
 template: splash
+hero:
+  tagline:
+    <code class="">'Fake Rubik Store' es un proyecto full stack que incluye un e-commerce de cubos de rubik. Esta API RESTful proporciona los servicios backend para la tienda online.</code>
+  actions:
+    - text: Iniciar
+      link: "./introduction/goals"
+      icon: right-arrow
+      variant: primary
+    - text: Ir al proyecto
+      link: https://fake-rubik-store-front-end.vercel.app/
+      icon: external
+      variant: secondary
+    - text: Ver codigo
+      link: https://github.com/KritiusOne/FakeRubikStoreAPI
+      icon: github
+      variant: secondary
 ---
 import Footer from "../../components/Footer.astro"
+import { getAllProducts } from "../../lib/productResponseExample.ts"
+import { Code } from "@astrojs/starlight/components"
 
-Esta es una pagina hecha con el template splash
+## Ejemplo de solicitud
+<Code code={`const res = await fetch('api/Product?PageSize=3&PageNumber=1')`} lang="js" title={"home.tsx"} mark={["HTTP solicitud"]} />
+## Respuesta
+<Code code={getAllProducts} title="home.tsx" mark={["HTTP response"]} />
+
 
 <Footer />
