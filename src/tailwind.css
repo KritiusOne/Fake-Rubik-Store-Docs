@@ -7,31 +7,32 @@
 @import "../node_modules/@astrojs/starlight/style/props.css";
 @import "../node_modules/@astrojs/starlight/style/reset.css";
 @import "../node_modules/@astrojs/starlight/style/util.css";
+/* Dark mode colors. */
 :root {
-	--sl-color-accent-low: #361a1d;
-	--sl-color-accent: #a84452;
-	--sl-color-accent-high: #e4bec0;
+	--sl-color-accent-low: #460b05;
+	--sl-color-accent: #c60e00;
+	--sl-color-accent-high: #feb3a6;
 	--sl-color-white: #ffffff;
-	--sl-color-gray-1: #ebedf4;
-	--sl-color-gray-2: #bfc2ca;
-	--sl-color-gray-3: #868b9b;
-	--sl-color-gray-4: #535766;
-	--sl-color-gray-5: #343845;
-	--sl-color-gray-6: #232633;
-	--sl-color-black: #16181e;
+	--sl-color-gray-1: #dbf2ff;
+	--sl-color-gray-2: #aed0e3;
+	--sl-color-gray-3: #66acd1;
+	--sl-color-gray-4: #116082;
+	--sl-color-gray-5: #003e57;
+	--sl-color-gray-6: #002b3e;
+	--sl-color-black: #001b29;
 }
 /* Light mode colors. */
 :root[data-theme='light'] {
-	--sl-color-accent-low: #eccfd0;
-	--sl-color-accent: #aa4654;
-	--sl-color-accent-high: #4e2328;
-	--sl-color-white: #16181e;
-	--sl-color-gray-1: #232633;
-	--sl-color-gray-2: #343845;
-	--sl-color-gray-3: #535766;
-	--sl-color-gray-4: #868b9b;
-	--sl-color-gray-5: #bfc2ca;
-	--sl-color-gray-6: #ebedf4;
-	--sl-color-gray-7: #f5f6fa;
+	--sl-color-accent-low: #ffc8be;
+	--sl-color-accent: #a90a00;
+	--sl-color-accent-high: #640300;
+	--sl-color-white: #001b29;
+	--sl-color-gray-1: #002b3e;
+	--sl-color-gray-2: #003e57;
+	--sl-color-gray-3: #0f5e80;
+	--sl-color-gray-4: #4f95b9;
+	--sl-color-gray-5: #a6c8db;
+	--sl-color-gray-6: #dbf2ff;
+	--sl-color-gray-7: #edf8ff;
 	--sl-color-black: #ffffff;
 }
