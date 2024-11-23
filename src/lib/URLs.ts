@@ -1,0 +1,1 @@
+export const AppURL = "https://fake-rubik-store-front-end.vercel.app/"

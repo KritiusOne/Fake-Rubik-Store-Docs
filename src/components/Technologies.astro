@@ -1,0 +1,9 @@
+---
+import { technologies } from "../lib/techInfo"
+import { Badge } from "@astrojs/starlight/components"
+---
+<div class="flex flex-row flex-wrap gap-2 justify-center items-center">
+  {
+    technologies.map((technology)=> <Badge text={technology} variant="note" />)
+  }
+</div>
