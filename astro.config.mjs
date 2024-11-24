@@ -23,7 +23,7 @@ export default defineConfig({
       {
         label: "Introducción",
         items: [
-          { label: "Objetivo del proyecto", link: "/introduction/goals"},
+          { label: "Sobre este proyecto", link: "/introduction/goals"},
           { label: "Publico objetivo", link: "/introduction/target"},
           { label: "Alcance del proyecto", link: "/introduction/scope"},
         ]
