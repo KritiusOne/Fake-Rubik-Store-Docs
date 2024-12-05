@@ -1,0 +1,1 @@
+export type HTTPUsedVerbs = 'GET' | 'POST' | 'PUT' | 'DELETE'
