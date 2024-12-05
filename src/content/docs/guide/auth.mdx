@@ -5,8 +5,7 @@ desciption:
 ---
 import Endpoint from "@/Endpoint.astro"
 import {Code} from "@astrojs/starlight/components"
-import { createUserCSharp, createUserTs } from "@lib/AuthExamples"
-
+import { createUserCSharp, createUserTs, registerUserResponse } from "@lib/AuthExamples"
 
 ## Registro de usuario
 
@@ -21,3 +20,14 @@ El Registro de usuario es por medio de correo y contraseña, además de ser nece
 Donde:
  - El correo debe tener el formato correcto.
  - La contraseña debe mantener, al menos, 1 mayuscula, 1 minuscula, 1 número
+
+### Success
+
+- Codigo: 200
+- content-type: application/json
+
+<Code code={registerUserResponse} lang="json" title="response.json" />
+
+
+
+## Login del usuario

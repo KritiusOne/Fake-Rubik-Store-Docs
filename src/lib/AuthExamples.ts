@@ -17,3 +17,10 @@ export interface CreateUser {
   Password: string
 }
 `
+export const registerUserResponse = `
+  {
+  "typeToken": "Bearer",
+  "msg": "The register is succes. This is the JWT",
+  "response": <JWT token>
+  }
+  `
