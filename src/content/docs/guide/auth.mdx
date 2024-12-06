@@ -5,29 +5,34 @@ desciption:
 ---
 import Endpoint from "@/Endpoint.astro"
 import {Code} from "@astrojs/starlight/components"
-import { createUserCSharp, createUserTs, registerUserResponse } from "@lib/AuthExamples"
+import { createUserCSharp, createUserTs, registerUserResponse, loginUserCS, loginUserTS, loginSuccessResponse } from "@lib/AuthExamples"
 
 ## Registro de usuario
+El registro de usuario es por medio de correo y contraseña, además de ser necesarios otros datos, los cuales se reciben por el body de la solicitud.
 
-El Registro de usuario es por medio de correo y contraseña, además de ser necesarios otros datos, los cuales se reciben por el body de la solcitud. 
 
-### Información del Endpoint
-<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/SignIn" />
-
-<Code code={createUserCSharp} lang="csharp" title="CreateUserDTO.cs" />
-<Code code={createUserTs} lang="ts" title="userTypes.d.ts" />
-
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/SignIn" /> <Code code={createUserCSharp} lang="csharp" title="CreateUserDTO.cs" /> <Code code={createUserTs} lang="ts" title="userTypes.d.ts" />
 Donde:
- - El correo debe tener el formato correcto.
- - La contraseña debe mantener, al menos, 1 mayuscula, 1 minuscula, 1 número
+
+- El correo debe tener el formato correcto.
+- La contraseña debe mantener, al menos, 1 mayúscula, 1 minúscula, 1 número.
 
 ### Success
 
-- Codigo: 200
+- Código: 200
 - content-type: application/json
-
 <Code code={registerUserResponse} lang="json" title="response.json" />
 
-
-
 ## Login del usuario
+
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/Login" /> <Code code={loginUserTS} lang="ts" title="loginUser.d.ts" /> <Code code={loginUserCS} lang="cs" title="loginUser.cs" />
+
+Donde:
+
+- El email tiene que cumplir con el formato correcto.
+- La contraseña debe mantener, al menos, 1 mayúscula, 1 minúscula, 1 número.
+
+### Success
+- Código: 200
+- content-type: application/json
+<Code code={loginSuccessResponse} lang="json" title="loginResponse" />

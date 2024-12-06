@@ -24,3 +24,23 @@ export const registerUserResponse = `
   "response": <JWT token>
   }
   `
+export const loginUserCS = `
+    public class UserLogin
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+`
+export const loginUserTS = `
+export interface loginUser {
+  email: string,
+  password: string,
+}
+`
+export const loginSuccessResponse = `
+{
+  "typeToken": "Bearer",
+  "msg": "The login is success. This is the JWT",
+  "response": <JWT token>
+}
+`
