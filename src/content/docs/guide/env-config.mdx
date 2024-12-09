@@ -1,0 +1,71 @@
+---
+title: Configuración del entorno
+description: Descripción de la configuración del entorno
+---
+
+import { CardGrid, LinkCard} from "@astrojs/starlight/components"
+
+## Requisitos previos
+
+### Lenguajes de programación
+
+`Fake Rubik Store API` fue desarrollada usando `.NET 7`. Proximamente, se planea actualizarla a una versión LTS.
+
+### Sistema operativo
+
+.NET y ASP.NET son compatibles con Windows, macOS y Linux. Para una experiencia de desarrollo óptima y aprovechar al máximo las herramientas y funcionalidades integradas, se recomienda utilizar Windows 10 o una versión posterior.
+
+Si prefieres otro sistema operativo, sigue las guías de instalación oficiales de .NET para:
+
+<CardGrid>
+  <LinkCard title="Linux Os" href="https://learn.microsoft.com/es-es/dotnet/core/install/linux" />
+  <LinkCard title="MacOS" href="https://learn.microsoft.com/es-es/dotnet/core/install/macos" />
+</CardGrid>
+
+### Gestor de paquetes
+
+Al ser una Aplicación desarrollada en `.NET`, el gestor de paquetes usado es `NuGet`.
+Si se desea conocer más del uso de `NuGet`, se debería leer los siguientes articulos de la documentación oficial:
+
+<CardGrid>
+  <LinkCard title="Manejo por consola" href="https://learn.microsoft.com/es-es/nuget/consume-packages/install-use-packages-powershell" />
+  <LinkCard title="Manejo en Visual Studio" href="https://learn.microsoft.com/es-es/nuget/consume-packages/install-use-packages-visual-studio" />
+</CardGrid>
+
+### Herramientas de desarrollo
+
+El IDE utilizado y recomendado es `Visual Studio 2022`, debido a que tiene intregación con Azure, git, herramientas para debuggear de forma eficiente, autocompletado, entre otros beneficios. 
+Entre las alternativas de Visual Studio podemos nombrar:
+
+  - Visual Studio Code
+  - Eclipse
+  - entre otros.
+
+Para el despliegue de la API, se recomienda usar Azure, pero cualquier servicio de nube (AWS, Google Cloud, etc.) que admita .NET 7 o superior es valido.
+
+Azure Blob Storage es el servicio de almacenamiento de archivos seleccionado para esta API. Ofrece una solución escalable, duradera y altamente disponible para almacenar grandes cantidades de datos. Si prefieres utilizar otro servicio de almacenamiento de objetos, como AWS S3, puedes adaptarlo sin problemas.
+
+Algunos recursos útiles podrían ser:
+<CardGrid>
+  <LinkCard title="Azure Blob Storage" href={"https://azure.microsoft.com/en-us/products/storage/blobs/?ef_id=_k_Cj0KCQiAuou6BhDhARIsAIfgrn7qOU3AvO6jQQrDEDXEgK-BL8eHj-XIirku0w6C_duwSlN6bQm7oVQaAq4jEALw_wcB_k_&OCID=AIDcmm3804ythc_SEM__k_Cj0KCQiAuou6BhDhARIsAIfgrn7qOU3AvO6jQQrDEDXEgK-BL8eHj-XIirku0w6C_duwSlN6bQm7oVQaAq4jEALw_wcB_k_&gad_source=1&gclid=Cj0KCQiAuou6BhDhARIsAIfgrn7qOU3AvO6jQQrDEDXEgK-BL8eHj-XIirku0w6C_duwSlN6bQm7oVQaAq4jEALw_wcB"} />
+  <LinkCard title="Amazon s3" href={"https://aws.amazon.com/es/pm/serv-s3/?gclid=Cj0KCQiAuou6BhDhARIsAIfgrn55PcTzs-Rs0dJYSREnt6bb5e_DCgJBr_gH2z5x5MyDXi7oGaVuC5gaAjJaEALw_wcB&trk=04eba5e2-014a-4892-986d-6755e849510d&sc_channel=ps&ef_id=Cj0KCQiAuou6BhDhARIsAIfgrn55PcTzs-Rs0dJYSREnt6bb5e_DCgJBr_gH2z5x5MyDXi7oGaVuC5gaAjJaEALw_wcB:G:s&s_kwcid=AL!4422!3!648114154208!p!!g!!amazons3!19685311841!149715856207"} />
+  <LinkCard title="Cloud Storage" href={"https://cloud.google.com/storage/?utm_source=google&utm_medium=cpc&utm_campaign=latam-CO-all-es-dr-SKWS-all-all-trial-b-dr-1707800-LUAC0020218&utm_content=text-ad-none-any-DEV_c-CRE_654650681187-ADGP_Hybrid+%7C+SKWS+-+BRO+%7C+Txt_Storage-Cloud+Storage-KWID_43700076085060876-kwd-4642545472&utm_term=KW_cloud+storage-ST_cloud+storage&gad_source=1&gclid=Cj0KCQiAuou6BhDhARIsAIfgrn5mBeWLWrqRzYtARdnATEanx6jBBLG3j6fX9e2NlYTu2xz63dVzfWUaAhmbEALw_wcB&gclsrc=aw.ds&hl=es-419"} />
+</CardGrid>
+## Pasos de instalación
+
+### Clonar el repositorio
+
+Para esto, es necesario:
+  1. Ir al repositorio de `Github`. 
+  2. Copiar el enlace del repositorio
+  3. Ir a la carpeta donde se desea ubicar el proyecto con una terminal.
+  4. Ejecutar en la terminal el comando `Git clone <URL>`
+  5. Abrir el proyecto en su IDE o Editor de código favorito.
+
+### Variables de entorno
+
+Son necesarias las siguientes variables de entorno:
+  1. Bases de datos de entornos de Producción y Desarrollo.
+  2. Configuración de JWT 
+    <LinkCard title="JWT Docs" href="https://jwt.io/" target="_blank" />
+  3. Configuración del servicio de almacenamiento de archivos previamente seleccionado (Ver herramientas de desarrollo)

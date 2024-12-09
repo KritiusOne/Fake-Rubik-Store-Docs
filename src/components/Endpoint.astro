@@ -1,0 +1,18 @@
+---
+import { Badge } from "@astrojs/starlight/components";
+import type { BadgeVariant } from "../types/starlightComponents"
+import type {HTTPUsedVerbs} from "../types/types"
+
+interface Props {
+  badgeVariant: BadgeVariant
+  urlText: string
+  HTTPVerb: HTTPUsedVerbs
+}
+
+const { badgeVariant, urlText, HTTPVerb } = Astro.props;
+---
+
+<div class="flex flex-row gap-2 justify-start items-center">
+  <Badge text={HTTPVerb} variant={badgeVariant} />
+  <span class="text-lg "> {urlText} </span>
+</div>

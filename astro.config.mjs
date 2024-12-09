@@ -24,10 +24,18 @@ export default defineConfig({
         label: "Introducción",
         items: [
           { label: "Sobre este proyecto", link: "/introduction/goals"},
-          { label: "Publico objetivo", link: "/introduction/target"},
+          { label: "Público objetivo", link: "/introduction/target"},
           { label: "Alcance del proyecto", link: "/introduction/scope"},
         ]
-      }
+      },
+      {
+        label: "Guia del desarrollador",
+        items: [
+          { label: "Configuración del entorno", link: "/guide/env-config"},
+          { label: "Autenticación", link: "/guide/auth"},
+          { label: "Métodos HTTP soportados", link: "/guide/methods-support"},
+        ]
+      },
     ],
     defaultLocale: "es"
   }),   mdx()],
