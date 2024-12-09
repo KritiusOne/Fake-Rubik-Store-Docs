@@ -2,4 +2,12 @@
 title: Metodos HTTP soportados
 description: Metodos HTTP soportados
 ---
-Metodos
+import { Badge } from "@astrojs/starlight/components"
+
+Los métodos soportados dentro de la API son los siguientes:
+
+<Badge text="GET" variant="tip" /> Para acciones en las que se obtienen todos los recursos de una entidad, cuando se desea obtener un conjunto que cumpla con las condiciones establecidas en parámetros de consulta o cuando se desea obtener la información de un único recurso.
+
+<Badge text="POST" variant="success" /> Para crear un recurso o iniciar sesión.
+
+<Badge text="PUT" variant="caution" /> Para modificar recursos ya existentes.
