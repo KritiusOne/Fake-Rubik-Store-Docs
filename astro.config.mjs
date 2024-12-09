@@ -33,7 +33,6 @@ export default defineConfig({
         items: [
           { label: "Configuración del entorno", link: "/guide/env-config"},
           { label: "Autenticación", link: "/guide/auth"},
-          { label: "Estructuras de las URL", link: "/guide/url-struct"},
           { label: "Métodos HTTP soportados", link: "/guide/methods-support"},
         ]
       },
