@@ -24,11 +24,11 @@ This repository contains the documentation for the RESTful API called 'Fake Rubi
     - Autenticación
     - Métodos HTTP soportados
   - Entidades:
-    - Descripción detallada de cada - entidad (usuario, producto, etc.)
+    - Descripción detallada de cada entidad (usuario, producto, etc.)
     - Propiedades y tipos de datos
   - Endpoints:
     - Lista completa de endpoints
-    - Descripción detallada de cada - endpoint
+    - Descripción detallada de cada endpoint
     - Parámetros de consulta
     - Cuerpo de la solicitud (body)
     - Respuestas posibles (códigos de estado HTTP y formato de datos)
