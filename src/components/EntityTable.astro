@@ -1,0 +1,78 @@
+---
+import type { entity } from "src/types/types";
+import { Icon } from "@astrojs/starlight/components";
+
+interface Props {
+  infoTable: entity;
+}
+const { infoTable } = Astro.props;
+---
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead
+      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+    >
+      <tr>
+        <th scope="col" class="px-6 py-3"> <span class="w-full h-full px-6">Nombre</span> </th>
+        <th scope="col" class="px-6 py-3"> <span class="w-full h-full px-6">Tipo</span> </th>
+        <th scope="col" class="px-6 py-3"> <span class="w-full h-full px-6">Descripción</span> </th>
+        <th scope="col" class="px-6 py-3"> <span class="w-full h-full px-6">Tipo de key</span> </th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        infoTable.propierties.map((property) => (
+          <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 px-10">
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              <span class="px-6">
+                {
+                  property.propiertyName
+                }
+              </span>
+            </th>
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              <span class="px-6">
+                {
+                  property.dataType
+                }
+              </span>
+            </th>
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-balance"
+            >
+              <span class="px-6 max-w-[10ch] text-balance text-center">
+                {
+                  property.description
+                }
+              </span>
+            </th>
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              {
+                property.isFK && <span class="flex flex-row justify-center items-center gap-2 "> FK <Icon name="approve-check-circle" color="green" size="24px" /> </span>
+              }
+              {
+                property.isPK && <span class="flex flex-row justify-center items-center gap-2 "> PK <Icon name="approve-check-circle" color="green" size="24px" /> </span>
+              }
+              {
+                !property.isFK && !property.isPK && <span class="flex flex-row justify-center items-center gap-2 "> <Icon name="close" color="red" size="24px" /> </span>
+              }
+            </th>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
