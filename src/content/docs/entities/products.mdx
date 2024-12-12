@@ -6,13 +6,13 @@ import { product } from "@lib/entitiesInfo"
 import Table from "@/EntityTable.astro"
 import Endpoint from "@/Endpoint.astro"
 import {Code} from "@astrojs/starlight/components"
-import { getAllProducts, getAllInfoProducts } from "@lib/productsExamples.ts"
+import { getAllProducts, getAllInfoProducts, getById } from "@lib/productsExamples.ts"
 
 { product.description }
 
 <Table infoTable={product} />
 
-## Get
+## GetAll
 
 3 de los 5 endpoints son para obtener información.
 
@@ -73,3 +73,31 @@ Indica el número de productos que se recibirán en cada solucitud.
 
 Indica el numero de pagina al que se desea ir. Sirve para especificar cuantos productos quieres saltear, para así seleccionar un conjunto de productos en esecifico
 
+## Get by Id
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Product/{id}" />
+
+<Code code={getById} title="getById.json" lang="JSON" />
+
+En la URL se recibe como ultimo parametro el id del producto que se desea
+
+## Post
+
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/Product" />
+
+Este endpoint se usa para crear un producto. Recibe por medio de FormData un objeto con los siguientes campos
+
+<Code code={`{
+    Name: "",
+    Price: 0,
+    Stock: 0,
+    Description: "",
+    Image: "",
+    Thumbnail: "",
+    ProductCategories: []
+  }`} lang="ts" title="createProduct.ts"  />
+
+## Put
+
+<Endpoint HTTPVerb="PUT" badgeVariant="caution" urlText="/api/Product/update" />
+El metodo put recibe los mismos campos que el metodo Post

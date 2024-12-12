@@ -151,3 +151,45 @@ export const getAllInfoProducts = `
   ]
 }
 `
+
+export const getById = `
+{
+  "msg": "This is the product selected",
+  "response": {
+    "reviews": [
+      {
+        "productId": 2,
+        "userId": 1004,
+        "description": "Es un gran cubo, muy buen material, muy lindo y tiene gran giro",
+        "rate": 5
+      }
+    ],
+    "productCategories": [
+      {
+        "idCategory": 1,
+        "idProduct": 2,
+        "categoryNav": {
+          "id": 1,
+          "name": "3x3"
+        }
+      },
+      {
+        "idCategory": 6,
+        "idProduct": 2,
+        "categoryNav": {
+          "id": 6,
+          "name": "MAGNETICO"
+        }
+      }
+    ],
+    "id": 2,
+    "name": "GAN Mirror M (Magnético) UV 3×3 Morado",
+    "price": 120000,
+    "stock": 10,
+    "image": "eadc4650-7dab-4f70-9657-2354615566ed",
+    "description": "Nuevo desafío: GAN MirrorM es un nuevo diseño visual con un cubo de velocidad de 3 x 3, que no se resuelve con colores sino por formas. El cubo de espejo GAN te traerá más diversión",
+    "thumbnail": "39e50337-fe40-4683-88fb-b440d1bdb9a7"
+  }
+}
+
+`
