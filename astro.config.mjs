@@ -52,7 +52,13 @@ export default defineConfig({
         ]
       }
     ],
-    defaultLocale: "es"
+    defaultLocale: "root",
+    locales: {
+      root: {
+        label: "Español",
+        lang: "es-ES"
+      }
+    }
   }), mdx()],
   devToolbar: {
     enabled: true
