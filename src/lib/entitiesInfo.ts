@@ -5,7 +5,7 @@ export const product: entity = {
   description: "Contiene la lista de todos los productos disponibles en el sistema.",
   propierties: [
     {
-      propiertyName: "Id",
+      propiertyName: "id",
       dataType: "string",
       description: "Identificador único del producto.",
       isFK: false,
@@ -57,13 +57,40 @@ export const product: entity = {
   relationships: [
     {
       typeRelation: "Uno a muchos",
-      key: "IdProducto",
+      key: "id",
       tableRelation: "ProductCategory",
     },
     {
       typeRelation: "Uno a muchos",
-      key: "IdProducto",
+      key: "id",
       tableRelation: "Reviews",
     },
   ],
 };
+
+export const category: entity = {
+  description: "Se utiliza para clasificar los productos, lo cual es util para filtrar y buscar",
+  EntityName: "Categoría",
+  propierties: [
+    {
+      propiertyName: "id",
+      description: "Identificador único de la categoría",
+      dataType: "integer",
+      isFK: false,
+      isPK: true
+    },
+    {
+      propiertyName: "name",
+      dataType: "string",
+      description: "Nombre de la categoría",
+      isFK: false
+    }
+  ],
+  relationships: [
+    {
+      tableRelation: "ProductCategory",
+      key: "id",
+      typeRelation: "Uno a muchos"
+    }
+  ]
+}
