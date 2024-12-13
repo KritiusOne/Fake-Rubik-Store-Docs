@@ -1,0 +1,40 @@
+---
+title: Categorías
+description: Entidad categorías que sirve para clasificar los productos
+---
+import Table from "@/EntityTable.astro"
+import Endpoint from "@/Endpoint.astro"
+import {category} from "@lib/entitiesInfo"
+import {Code} from "@astrojs/starlight/components"
+import {getAll, bodyCreateCategory, bodyCreatePC} from "@lib/categoriesExamples.ts"
+
+{ category.description }
+
+<Table infoTable={category} />
+
+La tabla contiene 3 endpoints, de los cuales 2 son con el verbo `POST`
+
+## Get
+
+Existe un endpoint que recupera todas las categorías
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip"  urlText="/api/Category" />
+<Code code={getAll} lang="json" title="response.json" />
+
+## POST
+
+Existen 2 endpoints para crear registros, los cuales dependen de lo que deseemos hacer.
+
+### Crear una nueva categoría
+
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/Category" />
+Además, recibe en el body el siguiente objeto
+<Code code={bodyCreateCategory} lang="json" title="create.json"  />
+
+### Asignar categorías existentes a productos existentes
+
+La relación que existe entre productos y categorías es de muchos a muchos, por ende, por reglas de normalización, existe una tabla auxiliar llamada ProductCategory que es en la que se le asignan a los productos las categorías que se desean
+
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/addPC" />
+<Code code={bodyCreatePC} lang="json" title="createPC.json" />
+
