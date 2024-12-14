@@ -176,3 +176,45 @@ export const userEntity: entity = {
     }
   ]
 };
+export const review: entity = {
+  EntityName: "Review",
+  description: "Representa una reseña de producto realizada por un usuario, incluyendo una calificación y una descripción opcional.",
+  propierties: [
+    {
+      propiertyName: "ProductId",
+      dataType: "integer",
+      description: "Clave foránea que referencia el producto que se está reseñando.",
+      isFK: true
+    },
+    {
+      propiertyName: "UserId",
+      dataType: "integer",
+      description: "Clave foránea que referencia al usuario que realizó la reseña.",
+      isFK: true
+    },
+    {
+      propiertyName: "Description",
+      dataType: "string",
+      description: "Texto opcional que describe la reseña del usuario.",
+      isFK: false
+    },
+    {
+      propiertyName: "Rate",
+      dataType: "integer",
+      description: "Calificación otorgada por el usuario al producto.",
+      isFK: false
+    }
+  ],
+  relationships: [
+    {
+      typeRelation: "Uno a muchos",
+      key: "ProductId",
+      tableRelation: "Products"
+    },
+    {
+      typeRelation: "Uno a muchos",
+      key: "UserId",
+      tableRelation: "User"
+    }
+  ]
+};
