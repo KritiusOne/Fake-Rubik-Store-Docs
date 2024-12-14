@@ -1,0 +1,12 @@
+---
+title: Usuario
+description: Entidad que representa a los usuarios del sistema, incluyendo su información personal, roles, direcciones y relaciones con otras entidades como órdenes, entregas y reseñas.
+---
+import {userEntity} from "@lib/entitiesInfo"
+import Table from "@/EntityTable.astro"
+
+{
+userEntity.description
+}
+
+<Table infoTable={userEntity} />

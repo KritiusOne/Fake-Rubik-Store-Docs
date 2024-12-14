@@ -94,3 +94,85 @@ export const category: entity = {
     }
   ]
 }
+export const userEntity: entity = {
+  EntityName: "User",
+  description: "Entidad que representa a los usuarios del sistema, incluyendo su información personal, roles, direcciones y relaciones con otras entidades como órdenes, entregas y reseñas.",
+  propierties: [
+    {
+      propiertyName: "Id",
+      dataType: "integer",
+      description: "Identificador único del usuario.",
+      isFK: false,
+      isPK: true,
+    },
+    {
+      propiertyName: "IdRole",
+      dataType: "integer",
+      description: "Identificador del rol asociado al usuario.",
+      isFK: true,
+    },
+    {
+      propiertyName: "IdAddress",
+      dataType: "integer",
+      description: "Identificador de la dirección asociada al usuario.",
+      isFK: true,
+    },
+    {
+      propiertyName: "Name",
+      dataType: "string",
+      description: "Nombre del usuario.",
+      isFK: false,
+    },
+    {
+      propiertyName: "SecondName",
+      dataType: "string",
+      description: "Apellido del usuario.",
+      isFK: false,
+    },
+    {
+      propiertyName: "Email",
+      dataType: "string",
+      description: "Correo electrónico del usuario.",
+      isFK: false,
+    },
+    {
+      propiertyName: "Password",
+      dataType: "string",
+      description: "Contraseña del usuario.",
+      isFK: false,
+    },
+    {
+      propiertyName: "Phone",
+      dataType: "string",
+      description: "Número de teléfono del usuario.",
+      isFK: false,
+    }
+  ],
+  relationships: [
+    {
+      typeRelation: "Uno a muchos",
+      key: "Id",
+      tableRelation: "Orders",
+    },
+    {
+      typeRelation: "Uno a muchos",
+      key: "Id",
+      tableRelation: "Deliveries",
+    },
+    {
+      typeRelation: "Uno a muchos",
+      key: "Id",
+      tableRelation: "Reviews",
+    },
+    {
+      typeRelation: "Uno a muchos",
+      key: "IdRole",
+      tableRelation: "Role",
+    },
+    {
+      typeRelation: "Uno a uno",
+      key: "IdAddress",
+      tableRelation: "Address",
+    }
+  ]
+};
