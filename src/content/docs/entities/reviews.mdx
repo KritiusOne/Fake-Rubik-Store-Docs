@@ -4,10 +4,21 @@ description: Representa una reseña de producto realizada por un usuario, incluy
 ---
 import {review} from "@lib/entitiesInfo"
 import Table from "@/EntityTable.astro"
+import Endpoint from "@/Endpoint.astro"
+import {Code} from "@astrojs/starlight/components"
+import { createReview, getAllReviews } from "@lib/reviewsExamples"
 
 {
 review.description
 }
 
 <Table infoTable={review} />
+
+## Get
+
+### Obtener todas las Reviews
+
+No se suele utilizar mucho más allá que para debuggear.
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Get" />
+<Code code={getAllReviews} lang="json" title="response.json" />
 
