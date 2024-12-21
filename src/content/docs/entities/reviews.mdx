@@ -6,7 +6,7 @@ import {review} from "@lib/entitiesInfo"
 import Table from "@/EntityTable.astro"
 import Endpoint from "@/Endpoint.astro"
 import {Code} from "@astrojs/starlight/components"
-import { createReview, getAllReviews } from "@lib/reviewsExamples"
+import { createReview, getAllReviews, getReviewById, postReviwBody } from "@lib/reviewsExamples"
 
 {
 review.description
@@ -22,3 +22,32 @@ No se suele utilizar mucho más allá que para debuggear.
 <Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Get" />
 <Code code={getAllReviews} lang="json" title="response.json" />
 
+### Obtener una review por ID
+
+La ID es compuesta, por lo que por URL se pasa tanto el ID del producto como del usuario que la realiza.
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Review/{productId}/{userId}" />
+<Code code={getReviewById} lang="json" title="response.json" />
+
+## POST
+
+### Crear una nueva Review
+
+<Endpoint HTTPVerb="POST" badgeVariant="success"
+urlText="/api/Review" />
+
+Para poder utilizar este endpoint debemos enviar en el body el siguiente contenido
+
+<Code code={postReviwBody} lang="ts" title="reviewsTypes.d.ts" />
+
+## PUT
+
+### Modificar una Review previa
+
+Se utiliza cuando un usuario quiere cambiar su opinión sobre algún producto. Para usarlo, es necesario 2 cosas:
+
+1. Especificar en la URL el Id de la review
+2. Enviar en el body el nuevo contenido de la review
+
+<Endpoint HTTPVerb="PUT" badgeVariant="caution" urlText="/api/Review/{productId}/{userId}" />
+<Code code={postReviwBody} lang="ts" title="reviewsTypes.d.ts" />
