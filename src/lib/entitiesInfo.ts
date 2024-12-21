@@ -184,13 +184,15 @@ export const review: entity = {
       propiertyName: "ProductId",
       dataType: "integer",
       description: "Clave foránea que referencia el producto que se está reseñando.",
-      isFK: true
+      isFK: true,
+      isPK: true
     },
     {
       propiertyName: "UserId",
       dataType: "integer",
       description: "Clave foránea que referencia al usuario que realizó la reseña.",
-      isFK: true
+      isFK: true,
+      isPK: true
     },
     {
       propiertyName: "Description",
