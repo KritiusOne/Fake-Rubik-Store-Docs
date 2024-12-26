@@ -220,3 +220,47 @@ export const review: entity = {
     }
   ]
 };
+export const address: entity = { 
+  description: "La entidad Address almacena información relacionada con ubicaciones físicas de usuarios, destinos de entrega o direcciones asociadas a pedidos. Puede representar una dirección de facturación, envío u otra relacionada.",
+  EntityName: "Dirección de usuario",
+  propierties: [
+    {
+      propiertyName: "Id",
+      dataType: "int",
+      description: "Identificador único del registro",
+      isFK: false,
+      isPK: true
+    },
+    {
+      propiertyName: "City",
+      dataType: "string",
+      description: "Ciudad de residencia o donde se desea recibir los envíos",
+      isFK: false
+    },
+    {
+      propiertyName: "State",
+      dataType: "string",
+      description: "Departamento, estado, región, etc. en el que se encuentra la ciudad",
+      isFK: false
+    },
+    {
+      propiertyName: "Country",
+      dataType: "string",
+      description: "País donde se encuentra el estado y la ciudad del usuario",
+      isFK: false
+    },
+    {
+      propiertyName: "Description",
+      dataType: "string",
+      description: "Descripción ampliada de la dirección del usuario, aquí pueden ir detalles como el codigo postal, la dirección exacta y/o una descripción del lugar",
+      isFK: false
+    }
+  ],
+  relationships: [
+    {
+      key: "Id",
+      tableRelation: "User",
+      typeRelation: "Uno a uno"
+    }
+  ]
+}
