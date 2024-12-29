@@ -312,7 +312,8 @@ export const ProductCategory: entity = {
 
 export const ordersEntity: entity = {
   EntityName: "Ordenes",
-  description: "Tabla que almacena los pedidos realizados por los usuarios.",
+  description:
+    "La tabla Orders almacena la información relacionada con los pedidos realizados por los usuarios en el sistema. Cada registro representa un pedido único que incluye detalles del usuario que lo realizó, la fecha en que se hizo el pedido y el precio total del mismo. Además, la tabla contiene claves foráneas para vincularla con las tablas de usuarios y métodos de entrega, permitiendo gestionar relaciones con otras entidades del sistema.",
   propierties: [
     {
       propiertyName: "Id",
