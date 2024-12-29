@@ -331,7 +331,7 @@ export const ordersEntity: entity = {
     {
       propiertyName: "IdDelivery",
       dataType: "int",
-      description: "Identificador del método de entrega.",
+      description: "Identificador del envío.",
       isFK: true,
     },
     {
@@ -357,6 +357,54 @@ export const ordersEntity: entity = {
       typeRelation: "Uno a uno",
       key: "IdDelivery",
       tableRelation: "Deliveries",
+    },
+  ],
+};
+
+export const OrdersProducts: entity = {
+  EntityName: "OrdersProducts",
+  description:
+    "Es una entidad auxiliar que representa la relación de muchos a muchos entre los productos y las ordenes.",
+  propierties: [
+    {
+      propiertyName: "IdProduct",
+      dataType: "int",
+      description:
+        "FK que lo relaciona con la entidad de los productos y a su vez es parte de la clave compuesta",
+      isFK: true,
+      isPK: true,
+    },
+    {
+      propiertyName: "IdOrders",
+      dataType: "int",
+      description:
+        "FK que lo relaciona con la entidad de las ordenes y a su vez es parte de la clave compuesta",
+      isFK: true,
+      isPK: true,
+    },
+    {
+      propiertyName: "ProductsNumbers",
+      dataType: "int",
+      description: "Cantidad de unidades compradas",
+      isFK: false,
+    },
+    {
+      propiertyName: "Price",
+      dataType: "double",
+      description: "Precio de la compra de estas unidades",
+      isFK: false,
+    },
+  ],
+  relationships: [
+    {
+      key: "IdProduct",
+      tableRelation: "Products",
+      typeRelation: "Uno a muchos",
+    },
+    {
+      key: "IdOrders",
+      tableRelation: "Orders",
+      typeRelation: "Uno a muchos",
     },
   ],
 };
