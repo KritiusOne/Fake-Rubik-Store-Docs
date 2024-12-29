@@ -1,0 +1,77 @@
+---
+title: Ordenes
+description: La tabla Orders almacena la información relacionada con los pedidos realizados por los usuarios en el sistema. Cada registro representa un pedido único que incluye detalles del usuario que lo realizó, el método de entrega seleccionado, la fecha en que se hizo el pedido y el precio total del mismo. Además, la tabla contiene claves foráneas para vincularla con las tablas de usuarios y métodos de entrega, permitiendo gestionar relaciones con otras entidades del sistema.
+---
+import {getAll, queryFilters, getById, createOrder} from "@lib/ordersExamples"
+import {ordersEntity, OrdersProducts} from "@lib/entitiesInfo"
+import Table from "@/EntityTable.astro"
+import {Code} from "@astrojs/starlight/components"
+import Endpoint from "@/Endpoint.astro"
+
+{ordersEntity.description}
+
+<Table infoTable={ordersEntity} />
+
+Es importante resaltar que existe una tabla intermedia que relaciona a los productos y las Ordenes, llamada `OrdersProducts`
+
+<Table infoTable={OrdersProducts} />
+
+## GetAll
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Order" />
+<Code code={getAll} lang="json" title="response.json" />
+### Params
+
+<Code code={queryFilters} lang="cs" title="orderQueryParams.cs" />
+
+### PageSize
+**tipo** `integer`
+
+Nos muestra el número de ordenes que se enviarán en la respuesta.
+
+### PageNumber
+**tipo** `integer`
+
+Indica la pagina en la que se encuentra actualmente
+
+### Date
+**tipo** `Date`
+
+Selecciona el conjunto de ordenes realizadas en una fecha 
+
+### MinDate
+**tipo** `Date`
+
+Selecciona el conjunto de ordenes realizadas después de una fecha
+
+### MaxDate
+**tipo** `Date`
+
+Selecciona el conjunto de ordenes realizadas antes de una fecha
+
+### MinPrice
+**tipo** `integer`
+
+Selecciona el conjunto de ordenes cuyo totalprice es mayor a este valor
+
+### MaxPrice
+**tipo** `integer`
+
+Selecciona el conjunto de ordenes cuyo totalprice es menor a este valor
+
+### IdUser
+**tipo** `integer`
+
+Selecciona las ordenes pertenecientes a un usuario en especifico
+
+## Get by Id
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Order/id?id=1" />
+<Code code={getById} lang="json" title="response.json" />
+
+## Crear Orden
+
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/Order" />
+Este endpoint recibe por medio del body los siguientes datos
+<Code code={createOrder} lang="json" title="body.json" />
+
