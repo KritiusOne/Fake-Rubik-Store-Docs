@@ -4,7 +4,7 @@ description: Entidad categorías que sirve para clasificar los productos
 ---
 import Table from "@/EntityTable.astro"
 import Endpoint from "@/Endpoint.astro"
-import {category} from "@lib/entitiesInfo"
+import {category, ProductCategory} from "@lib/entitiesInfo"
 import {Code} from "@astrojs/starlight/components"
 import {getAll, bodyCreateCategory, bodyCreatePC} from "@lib/categoriesExamples.ts"
 
@@ -12,8 +12,11 @@ import {getAll, bodyCreateCategory, bodyCreatePC} from "@lib/categoriesExamples.
 
 <Table infoTable={category} />
 
-La tabla contiene 3 endpoints, de los cuales 2 son con el verbo `POST`
+La tabla contiene 3 endpoints, de los cuales 2 son con el verbo `POST`.
 
+Es importante señalar que existe una entidad intermedia entre los productos y las categorías debido a que se relacionan de muchos a muchos
+
+<Table infoTable={ProductCategory} />
 ## Get
 
 Existe un endpoint que recupera todas las categorías

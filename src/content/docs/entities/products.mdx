@@ -2,7 +2,7 @@
 title: Productos
 description: Documentación del la entidad productos
 ---
-import { product } from "@lib/entitiesInfo"
+import { product, ProductCategory } from "@lib/entitiesInfo"
 import Table from "@/EntityTable.astro"
 import Endpoint from "@/Endpoint.astro"
 import {Code} from "@astrojs/starlight/components"
@@ -11,6 +11,10 @@ import { getAllProducts, getAllInfoProducts, getById } from "@lib/productsExampl
 { product.description }
 
 <Table infoTable={product} />
+
+Es importante señalar que existe una entidad intermedia entre los productos y las categorías debido a que se relacionan de muchos a muchos
+
+<Table infoTable={ProductCategory} />
 
 ## GetAll
 
