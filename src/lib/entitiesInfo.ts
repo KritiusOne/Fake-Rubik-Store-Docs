@@ -2,7 +2,8 @@ import type { entity } from "src/types/types";
 
 export const product: entity = {
   EntityName: "Productos",
-  description: "Contiene la lista de todos los productos disponibles en el sistema.",
+  description:
+    "Contiene la lista de todos los productos disponibles en el sistema.",
   propierties: [
     {
       propiertyName: "id",
@@ -69,7 +70,8 @@ export const product: entity = {
 };
 
 export const category: entity = {
-  description: "Se utiliza para clasificar los productos, lo cual es util para filtrar y buscar",
+  description:
+    "Se utiliza para clasificar los productos, lo cual es util para filtrar y buscar",
   EntityName: "Categoría",
   propierties: [
     {
@@ -77,26 +79,27 @@ export const category: entity = {
       description: "Identificador único de la categoría",
       dataType: "integer",
       isFK: false,
-      isPK: true
+      isPK: true,
     },
     {
       propiertyName: "name",
       dataType: "string",
       description: "Nombre de la categoría",
-      isFK: false
-    }
+      isFK: false,
+    },
   ],
   relationships: [
     {
       tableRelation: "ProductCategory",
       key: "id",
-      typeRelation: "Uno a muchos"
-    }
-  ]
-}
+      typeRelation: "Uno a muchos",
+    },
+  ],
+};
 export const userEntity: entity = {
   EntityName: "User",
-  description: "Entidad que representa a los usuarios del sistema, incluyendo su información personal, roles, direcciones y relaciones con otras entidades como órdenes, entregas y reseñas.",
+  description:
+    "Entidad que representa a los usuarios del sistema, incluyendo su información personal, roles, direcciones y relaciones con otras entidades como órdenes, entregas y reseñas.",
   propierties: [
     {
       propiertyName: "Id",
@@ -146,7 +149,7 @@ export const userEntity: entity = {
       dataType: "string",
       description: "Número de teléfono del usuario.",
       isFK: false,
-    }
+    },
   ],
   relationships: [
     {
@@ -173,55 +176,59 @@ export const userEntity: entity = {
       typeRelation: "Uno a uno",
       key: "IdAddress",
       tableRelation: "Address",
-    }
-  ]
+    },
+  ],
 };
 export const review: entity = {
   EntityName: "Review",
-  description: "Representa una reseña de producto realizada por un usuario, incluyendo una calificación y una descripción opcional.",
+  description:
+    "Representa una reseña de producto realizada por un usuario, incluyendo una calificación y una descripción opcional.",
   propierties: [
     {
       propiertyName: "ProductId",
       dataType: "integer",
-      description: "Clave foránea que referencia el producto que se está reseñando.",
+      description:
+        "Clave foránea que referencia el producto que se está reseñando.",
       isFK: true,
-      isPK: true
+      isPK: true,
     },
     {
       propiertyName: "UserId",
       dataType: "integer",
-      description: "Clave foránea que referencia al usuario que realizó la reseña.",
+      description:
+        "Clave foránea que referencia al usuario que realizó la reseña.",
       isFK: true,
-      isPK: true
+      isPK: true,
     },
     {
       propiertyName: "Description",
       dataType: "string",
       description: "Texto opcional que describe la reseña del usuario.",
-      isFK: false
+      isFK: false,
     },
     {
       propiertyName: "Rate",
       dataType: "integer",
       description: "Calificación otorgada por el usuario al producto.",
-      isFK: false
-    }
+      isFK: false,
+    },
   ],
   relationships: [
     {
       typeRelation: "Uno a muchos",
       key: "ProductId",
-      tableRelation: "Products"
+      tableRelation: "Products",
     },
     {
       typeRelation: "Uno a muchos",
       key: "UserId",
-      tableRelation: "User"
-    }
-  ]
+      tableRelation: "User",
+    },
+  ],
 };
-export const address: entity = { 
-  description: "La entidad Address almacena información relacionada con ubicaciones físicas de usuarios, destinos de entrega o direcciones asociadas a pedidos. Puede representar una dirección de facturación, envío u otra relacionada.",
+export const address: entity = {
+  description:
+    "La entidad Address almacena información relacionada con ubicaciones físicas de usuarios, destinos de entrega o direcciones asociadas a pedidos. Puede representar una dirección de facturación, envío u otra relacionada.",
   EntityName: "Dirección de usuario",
   propierties: [
     {
@@ -229,38 +236,126 @@ export const address: entity = {
       dataType: "int",
       description: "Identificador único del registro",
       isFK: false,
-      isPK: true
+      isPK: true,
     },
     {
       propiertyName: "City",
       dataType: "string",
       description: "Ciudad de residencia o donde se desea recibir los envíos",
-      isFK: false
+      isFK: false,
     },
     {
       propiertyName: "State",
       dataType: "string",
-      description: "Departamento, estado, región, etc. en el que se encuentra la ciudad",
-      isFK: false
+      description:
+        "Departamento, estado, región, etc. en el que se encuentra la ciudad",
+      isFK: false,
     },
     {
       propiertyName: "Country",
       dataType: "string",
       description: "País donde se encuentra el estado y la ciudad del usuario",
-      isFK: false
+      isFK: false,
     },
     {
       propiertyName: "Description",
       dataType: "string",
-      description: "Descripción ampliada de la dirección del usuario, aquí pueden ir detalles como el codigo postal, la dirección exacta y/o una descripción del lugar",
-      isFK: false
-    }
+      description:
+        "Descripción ampliada de la dirección del usuario, aquí pueden ir detalles como el codigo postal, la dirección exacta y/o una descripción del lugar",
+      isFK: false,
+    },
   ],
   relationships: [
     {
       key: "Id",
       tableRelation: "User",
-      typeRelation: "Uno a uno"
-    }
-  ]
-}
+      typeRelation: "Uno a uno",
+    },
+  ],
+};
+
+export const ProductCategory: entity = {
+  EntityName: "ProductCategory",
+  description:
+    "Table auxiliar para relacionar de muchos a muchos a los productos con las categorias",
+  propierties: [
+    {
+      propiertyName: "IdCategory",
+      dataType: "int",
+      description:
+        "FK que lo relaciona con la entidad de las categorías y a su vez es parte de la clave compuesta",
+      isFK: true,
+      isPK: true,
+    },
+    {
+      propiertyName: "IdProduct",
+      dataType: "int",
+      description:
+        "FK que lo relaciona con la entidad de los productos y a su vez es parte de la clave compuesta",
+      isFK: true,
+      isPK: true,
+    },
+  ],
+  relationships: [
+    {
+      key: "IdCategory",
+      tableRelation: "Categories",
+      typeRelation: "Uno a muchos",
+    },
+    {
+      key: "IdProduct",
+      tableRelation: "Products",
+      typeRelation: "Uno a muchos",
+    },
+  ],
+};
+
+export const ordersEntity: entity = {
+  EntityName: "Ordenes",
+  description: "Tabla que almacena los pedidos realizados por los usuarios.",
+  propierties: [
+    {
+      propiertyName: "Id",
+      dataType: "int",
+      description: "Identificador único del pedido.",
+      isFK: false,
+      isPK: true,
+    },
+    {
+      propiertyName: "IdUser",
+      dataType: "int",
+      description: "Identificador del usuario que realizó el pedido.",
+      isFK: true,
+    },
+    {
+      propiertyName: "IdDelivery",
+      dataType: "int",
+      description: "Identificador del método de entrega.",
+      isFK: true,
+    },
+    {
+      propiertyName: "DateOrder",
+      dataType: "Date",
+      description: "Fecha en que se realizó el pedido.",
+      isFK: false,
+    },
+    {
+      propiertyName: "TotalPrice",
+      dataType: "number",
+      description: "Precio total del pedido.",
+      isFK: false,
+    },
+  ],
+  relationships: [
+    {
+      typeRelation: "Uno a muchos",
+      key: "IdUser",
+      tableRelation: "User",
+    },
+    {
+      typeRelation: "Uno a uno",
+      key: "IdDelivery",
+      tableRelation: "Deliveries",
+    },
+  ],
+};
