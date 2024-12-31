@@ -1,0 +1,17 @@
+---
+title: Envíos
+description: Información acerca de los envíos de las ordenes
+---
+
+import Table from "@/EntityTable.astro"
+import Endpoint from "@/Endpoint.astro"
+import {delivery} from "@lib/entitiesInfo"
+
+{delivery.description}
+
+<Table infoTable={delivery} />
+
+## Actualizar estado del envío
+
+Se le debe pasar por parametro el Id del registro y del nuevo estado como query params
+<Endpoint HTTPVerb="PUT" badgeVariant="caution" urlText="/api/Delivery/{id}" />
