@@ -4,9 +4,24 @@ description: Entidad que representa a los usuarios del sistema, incluyendo su in
 ---
 import {userEntity} from "@lib/entitiesInfo"
 import Table from "@/EntityTable.astro"
+import Endpoint from "@/Endpoint.astro"
+import {Code} from "@astrojs/starlight/components"
+import {updateUser, updateRoleUser} from "@lib/userExamples"
 
 {
 userEntity.description
 }
 
 <Table infoTable={userEntity} />
+
+## Actualizar usuario
+
+Se le debe enviar por parametro el Id del usuario a actualizar y por el body la información a cambiar
+<Endpoint HTTPVerb="PUT" badgeVariant="caution" urlText="/api/User/{id}" />
+<Code code={updateUser} lang="json" title="body.json" />
+
+## Actualizar rol del usuario
+
+Se le debe enviar por body la siguiente información
+<Endpoint HTTPVerb="PUT" badgeVariant="caution" urlText="/api/User/role/id" />
+<Code code={updateRoleUser} lang="json" title="body.json" />
