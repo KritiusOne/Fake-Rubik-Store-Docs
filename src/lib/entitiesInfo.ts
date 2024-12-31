@@ -453,3 +453,31 @@ export const delivery: entity = {
     },
   ],
 };
+
+export const role: entity = {
+  EntityName: "Rol",
+  description:
+    "Entidad que contiene la información sobre que papel cumple cada usuario en la aplicación",
+  propierties: [
+    {
+      propiertyName: "Id",
+      dataType: "int",
+      description: "Identificador único de cada registro",
+      isFK: false,
+      isPK: true,
+    },
+    {
+      propiertyName: "RoleName",
+      dataType: "string",
+      description: "Nombre descriptivo de cada rol",
+      isFK: false,
+    },
+  ],
+  relationships: [
+    {
+      key: "IdRole",
+      tableRelation: "User",
+      typeRelation: "Uno a muchos",
+    },
+  ],
+};
