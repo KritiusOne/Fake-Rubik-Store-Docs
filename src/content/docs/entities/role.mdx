@@ -1,0 +1,24 @@
+---
+title: Rol
+description: Entidad que describe el rol que ocupa el usuario en cuestión dentro de la aplicación
+---
+import Endpoint from "@/Endpoint.astro"
+import Table from "@/EntityTable.astro"
+import {role} from "@lib/entitiesInfo"
+import {Code} from "@astrojs/starlight/components"
+import {getAll, createRol} from "@lib/rolesExamples"
+
+{role.description}
+
+<Table infoTable={role} />
+
+## Get All
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Rol" />
+<Code code={getAll} lang="json" title="response.json" />
+
+## Crear rol
+
+Se le debe enviar por el body de la solicitud la siguiente información
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/Rol" />
+<Code code={createRol} lang="json" title="body.json" />
