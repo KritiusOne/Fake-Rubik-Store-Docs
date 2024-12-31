@@ -481,3 +481,30 @@ export const role: entity = {
     },
   ],
 };
+
+export const states: entity = {
+  EntityName: "Estados",
+  description: "Entidad que describe los posibles estados de cada orden",
+  propierties: [
+    {
+      propiertyName: "Id",
+      dataType: "int",
+      description: "Identificador único de cada registro",
+      isFK: false,
+      isPK: true,
+    },
+    {
+      propiertyName: "NameState",
+      dataType: "string",
+      description: "Nombre de cada estado",
+      isFK: false,
+    },
+  ],
+  relationships: [
+    {
+      key: "IdState",
+      tableRelation: "Deliveries",
+      typeRelation: "Uno a muchos",
+    },
+  ],
+};
