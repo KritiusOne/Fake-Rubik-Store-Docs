@@ -408,3 +408,48 @@ export const OrdersProducts: entity = {
     },
   ],
 };
+
+export const delivery: entity = {
+  EntityName: "Delivery",
+  description:
+    "Entidad que contiene la información del estado en el que se encuentra cada orden y su respectivo envío",
+  propierties: [
+    {
+      propiertyName: "Id",
+      dataType: "int",
+      description: "Identificador único de cada registro",
+      isFK: false,
+      isPK: true,
+    },
+    {
+      propiertyName: "IdState",
+      dataType: "int",
+      description: "FK que relaciona con la tabla estado",
+      isFK: true,
+    },
+    {
+      propiertyName: "IdUser",
+      dataType: "int",
+      description: "FK que relaciona con la tabla Usuarios",
+      isFK: true,
+    },
+    {
+      propiertyName: "CodeFollowing",
+      dataType: "string",
+      description: "Código de seguimiento del envío una vez está en camino",
+      isFK: false,
+    },
+  ],
+  relationships: [
+    {
+      key: "IdUser",
+      tableRelation: "User",
+      typeRelation: "Uno a muchos",
+    },
+    {
+      key: "IdState",
+      tableRelation: "States",
+      typeRelation: "Uno a muchos",
+    },
+  ],
+};
