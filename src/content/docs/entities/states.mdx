@@ -1,0 +1,24 @@
+---
+title: Estados
+description: Entidad que contiene el estado de envío de cada orden
+---
+import Endpoint from "@/Endpoint.astro"
+import Table from "@/EntityTable.astro"
+import {states} from "@lib/entitiesInfo"
+import {Code} from "@astrojs/starlight/components"
+import {getAll, createState} from "@lib/statesExamples"
+
+{states.description}
+
+<Table infoTable={states} />
+
+## Get All
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/State" />
+<Code code={getAll} lang="json" title="response.json" />
+
+## Crear estado
+
+Se le debe enviar la siguiente información por medio del body de la solicitud
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/State" />
+<Code code={createState} lang="json" title="body.json" />
