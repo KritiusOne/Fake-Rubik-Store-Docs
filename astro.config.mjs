@@ -23,22 +23,43 @@ export default defineConfig({
       {
         label: "Introducción",
         items: [
-          { label: "Sobre este proyecto", link: "/introduction/goals"},
-          { label: "Público objetivo", link: "/introduction/target"},
-          { label: "Alcance del proyecto", link: "/introduction/scope"},
+          { label: "Sobre este proyecto", link: "/introduction/goals" },
+          { label: "Público objetivo", link: "/introduction/target" },
+          { label: "Alcance del proyecto", link: "/introduction/scope" },
         ]
       },
       {
         label: "Guia del desarrollador",
         items: [
-          { label: "Configuración del entorno", link: "/guide/env-config"},
-          { label: "Autenticación", link: "/guide/auth"},
-          { label: "Métodos HTTP soportados", link: "/guide/methods-support"},
+          { label: "Configuración del entorno", link: "/guide/env-config" },
+          { label: "Autenticación", link: "/guide/auth" },
+          { label: "Métodos HTTP soportados", link: "/guide/methods-support" },
         ]
       },
+      {
+        label: "Entidades",
+        items: [
+          { label: "Índice", link: "/entities/" },
+          { label: "Categorias", link: "/entities/categories" },
+          { label: "Dirección", link: "/entities/address" },
+          { label: "Envíos", link: "/entities/deliveries" },
+          { label: "Órdenes", link: "/entities/orders" },
+          { label: "Productos", link: "/entities/products" },
+          { label: "Reviews", link: "/entities/reviews" },
+          { label: "Rol", link: "/entities/role" },
+          { label: "States", link: "/entities/states" },
+          { label: "Usuario", link: "/entities/user" }
+        ]
+      }
     ],
-    defaultLocale: "es"
-  }),   mdx()],
+    defaultLocale: "root",
+    locales: {
+      root: {
+        label: "Español",
+        lang: "es-ES"
+      }
+    }
+  }), mdx()],
   devToolbar: {
     enabled: true
   }

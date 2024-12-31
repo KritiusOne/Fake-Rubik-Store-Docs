@@ -1,0 +1,36 @@
+---
+title: Dirección
+description: Está pagina describe la entidad que contiene la información de la dirección del usuario
+---
+import Table from "@/EntityTable.astro"
+import { address } from "@lib/entitiesInfo"
+import { getAll, updateBody } from "@lib/addressExamples"
+import Endpoint from "@/Endpoint.astro"
+import {Code} from "@astrojs/starlight/components"
+
+{
+address.description
+}
+
+<Table infoTable={address} />
+
+Debido a que el usuario unicamente puede tener una dirección, una de las reglas del negocio es que al momento del registro se realiza la creación del registro perteneciente al usuario con los campos vacíos, hasta que el usuario decida modificarlo por uno de los endpoints
+
+## Get
+
+### Obtener todas las direcciones
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Address" />
+<Code code={getAll} lang="json" title="response.json" />
+
+### Obtener una dirección por ID
+
+Recibe por parametro el Id de la dirrección a buscar.
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Address/{id}" />
+
+## PUT
+### Modificar una dirección previamente existente
+
+Este endpoint requiere que se le envíen los nuevos datos 
+<Endpoint HTTPVerb="PUT" badgeVariant="caution" urlText="/api/Address/{id}" />
+<Code code={updateBody} lang="ts" title="updateBody.d.ts" />

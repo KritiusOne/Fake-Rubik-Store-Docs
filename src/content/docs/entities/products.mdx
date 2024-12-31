@@ -1,0 +1,107 @@
+---
+title: Productos
+description: Documentación del la entidad productos
+---
+import { product, ProductCategory } from "@lib/entitiesInfo"
+import Table from "@/EntityTable.astro"
+import Endpoint from "@/Endpoint.astro"
+import {Code} from "@astrojs/starlight/components"
+import { getAllProducts, getAllInfoProducts, getById } from "@lib/productsExamples.ts"
+
+{ product.description }
+
+<Table infoTable={product} />
+
+Es importante señalar que existe una entidad intermedia entre los productos y las categorías debido a que se relacionan de muchos a muchos
+
+<Table infoTable={ProductCategory} />
+
+## GetAll
+
+3 de los 5 endpoints son para obtener información.
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Product" />
+
+<Code code={getAllProducts} title="getAllProducts.tsx" lang="json" />
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Product/AllInfo" />
+
+<Code code={getAllInfoProducts} title="getAllInfoProducts.tsx" lang="json" />
+
+Sirven para obtener de forma paginada los productos, además de poderlos filtrar por precio, nombre, descripción y categoría. 
+Ambas rutas reciben por query params
+
+## Params
+
+Ambos endpoints reciben los mismos query params.
+
+### NameProduct
+
+**tipo** `string`
+
+Sive para filtrar los productos por los contenidos de la descripción
+
+### DescriptionProduct
+
+**tipo** `string`
+
+Sive para filtrar los productos por los contenidos del nombre
+
+### MinPrice
+
+**tipo** `integer`
+
+Es util para filtrar productos que tengan un precio menor del indicado
+
+### MaxPrice
+
+**tipo** `integer`
+
+Es util para filtrar productos que tengan un precio mayor del indicado
+
+### CategoriesIds
+
+**tipo** `array[integer]`
+
+Se utilizan para filtrar productos mediante sus categorias (Ver entidad categorias)
+
+### PageSize
+
+**tipo** `integer`
+
+Indica el número de productos que se recibirán en cada solucitud. 
+
+### PageNumber
+
+**tipo** `integer`
+
+Indica el numero de pagina al que se desea ir. Sirve para especificar cuantos productos quieres saltear, para así seleccionar un conjunto de productos en esecifico
+
+## Get by Id
+
+<Endpoint HTTPVerb="GET" badgeVariant="tip" urlText="/api/Product/{id}" />
+
+<Code code={getById} title="getById.json" lang="JSON" />
+
+En la URL se recibe como ultimo parametro el id del producto que se desea
+
+## Post
+
+<Endpoint HTTPVerb="POST" badgeVariant="success" urlText="/api/Product" />
+
+Este endpoint se usa para crear un producto. Recibe por medio de FormData un objeto con los siguientes campos
+
+<Code code={`{
+    Name: "",
+    Price: 0,
+    Stock: 0,
+    Description: "",
+    Image: "",
+    Thumbnail: "",
+    ProductCategories: []
+  }`} lang="ts" title="createProduct.ts"  />
+
+## Put
+
+<Endpoint HTTPVerb="PUT" badgeVariant="caution" urlText="/api/Product/update" />
+El metodo put recibe los mismos campos que el metodo Post
